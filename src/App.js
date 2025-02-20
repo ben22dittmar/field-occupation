@@ -3,6 +3,7 @@ import {
   Route,
   Routes,
   useNavigate,
+  Navigate
 } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./App.css";
@@ -19,7 +20,7 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/request-reset" element={<RequestReset />} />
           <Route path="/reset-password" element={<ResetPassword />} />
@@ -31,6 +32,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </Router>
     </AuthProvider>
