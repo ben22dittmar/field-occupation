@@ -40,7 +40,8 @@
 }
 
 .button {
-  width: 100%;
+  width: 80%;
+  max-width: 350px;
   background-color: #ef4444;
   color: white;
   padding: 10px;
@@ -50,11 +51,15 @@
   transition: background-color 0.3s;
 }
 
+.home-button {
+  width: 100%;
+}
+
 .button:hover {
   background-color: #dc2626;
 }
 
-.login-container {
+.login-container, .reset-password-container {
   display: flex;
   align-items: center;
   justify-content: center;

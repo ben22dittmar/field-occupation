@@ -36,7 +36,7 @@ function Home() {
         <img src={logoImage} alt="Logo" className="logo" />
         <h1 className="title">Willkommen beim TC Rot-Weiß</h1>
         <Link to="/login" className="button-link">
-          <button className="button">Anmelden</button>
+          <button className="button home-button">Anmelden</button>
         </Link>
       </motion.div>
     </div>
@@ -106,15 +106,16 @@ function ResetPassword() {
   };
 
   return (
-    <div>
-      <h2>Reset Password</h2>
+    <div className="reset-password-container">
+      <h1 className="reset-title">Reset Password</h1>
       <input 
         type="password" 
         placeholder="Enter new password" 
         value={password} 
         onChange={(e) => setPassword(e.target.value)} 
+        className="input-field"
       />
-      <button onClick={handleReset}>Submit</button>
+      <button onClick={handleReset} className="button">Submit</button>
       {message && <p>{message}</p>}
     </div>
   );
