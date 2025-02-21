@@ -38,7 +38,7 @@ export function Dashboard() {
   // Lade die Reservierungen beim ersten Rendern
   useEffect(() => {
     fetchReservations();
-  }, []);
+  });
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
