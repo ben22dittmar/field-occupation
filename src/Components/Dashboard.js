@@ -1,7 +1,7 @@
 import { useAuth } from "../Auth/auth";
 import { supabase } from "../Supabase/Client";
 import { useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export function Dashboard() {
   const { user } = useAuth();
@@ -11,7 +11,7 @@ export function Dashboard() {
   const [error, setError] = useState(null);
 
   // Funktion zum Laden der Reservierungen
-  const fetchReservations = async () => {
+  const fetchReservations = useCallback(async () => {
     try {
       setLoading(true);
 
@@ -33,12 +33,14 @@ export function Dashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user.id]);
 
   // Lade die Reservierungen beim ersten Rendern
   useEffect(() => {
-    fetchReservations();
-  });
+    if (user) {
+      fetchReservations();
+    }
+  }, [user, fetchReservations]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
