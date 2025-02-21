@@ -74,7 +74,7 @@ export function Dashboard() {
         )}
 
         <div className="button-container">
-          <button className="neutral-button">Alle anzeigen</button>
+          <button className="neutral-button" onClick={() => navigate("/request-reset")}>Alle anzeigen</button>
           <button className="neutral-button">Neue Reservierung</button>
         </div>
       </div>

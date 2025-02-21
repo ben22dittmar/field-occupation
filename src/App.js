@@ -32,6 +32,14 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route
+            path="/all-reservations"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </Router>
