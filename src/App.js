@@ -12,8 +12,8 @@ import { Login } from "./Auth/Login";
 import { RequestReset } from "./Auth/RequestPasswordReset";
 import { ResetPassword } from "./Auth/ResetPassword";
 import { Dashboard } from "./Components/Dashboard";
-import PrivateRoute from "./Components/PrivateRoute";
 import { AuthProvider } from "./Auth/auth";
+import { AllReservations } from "./Components/AllReservations";
 
 export default function App() {
   return (
@@ -24,22 +24,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/request-reset" element={<RequestReset />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/all-reservations"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/all-reservations" element={<AllReservations />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </Router>

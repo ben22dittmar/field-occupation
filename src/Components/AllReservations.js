@@ -3,7 +3,7 @@ import { supabase } from "../Supabase/Client";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
-export function Dashboard() {
+export function AllReservations() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [reservations, setReservations] = useState([]);
@@ -23,8 +23,7 @@ export function Dashboard() {
         .eq("user_id", user.id)
         .gte("date", today) // Nur Einträge ab heute anzeigen
         .order("date", { ascending: true })
-        .order("time_start", { ascending: true })
-        .limit(2); // Maximale Anzahl anzuzeigender Reservierungen
+        .order("time_start", { ascending: true });
 
       if (error) {
         throw error;
@@ -53,7 +52,6 @@ export function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h1>Willkommen!</h1>
       <div className="dashboard-content">
         <p>{user.email}</p>
         <h2 className="dashboard-title">Meine Reservierungen</h2>
@@ -76,7 +74,8 @@ export function Dashboard() {
                     Datum: {new Date(reservation.date).toLocaleDateString()}
                   </p>
                   <p>
-                    Zeit: {reservation.time_start.slice(0, 5)} - {reservation.time_end.slice(0, 5)}
+                    Zeit: {reservation.time_start.slice(0, 5)} -{" "}
+                    {reservation.time_end.slice(0, 5)}
                   </p>
                 </div>
               ))}
@@ -84,13 +83,13 @@ export function Dashboard() {
           )}
 
           <div className="button-container">
+            <button className="neutral-button">Neue Reservierung</button>
             <button
               className="neutral-button"
-              onClick={() => navigate("/all-reservations")}
+              onClick={() => navigate("/dashboard")}
             >
-              Alle anzeigen
+              Zurück
             </button>
-            <button className="neutral-button">Neue Reservierung</button>
           </div>
         </div>
 
