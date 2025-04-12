@@ -11,7 +11,9 @@ export function Login() {
 
   useEffect(() => {
     const checkUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession(); // Prüfe die aktuelle Session
+      const {
+        data: { session },
+      } = await supabase.auth.getSession(); // Prüfe die aktuelle Session
       if (session) {
         // Benutzer ist eingeloggt, leite zur Übersicht weiter
         //navigate("/overview");
@@ -32,7 +34,9 @@ export function Login() {
       });
 
       if (error) {
-        setError("Sie haben keine gültigen Anmeldedaten eingegeben, bitte überprüfen Sie ihre Eingabe"); // Zeige die Fehlermeldung an
+        setError(
+          "Sie haben keine gültigen Anmeldedaten eingegeben, bitte überprüfen Sie ihre Eingabe"
+        ); // Zeige die Fehlermeldung an
       } else {
         navigate("/overview"); // Weiterleitung bei erfolgreichem Login
       }
@@ -42,37 +46,40 @@ export function Login() {
   };
 
   return (
-    <div className="login-container">
-      <h1>Anmeldung</h1>
+    <div className="page-container">
+      <div className="login-container">
+        <h1>Anmeldung</h1>
         <p>Bitte geben Sie Ihre Anmeldedaten ein.</p>
-      <form onSubmit={handleLogin} className="login-form">
-        <input
-          type="email"
-          placeholder="E-Mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="login-input"
-        />
-        <input
-          type="password"
-          placeholder="Passwort"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="login-input"
-        />
-        <button type="submit" className="login-button">
-          Anmelden
+        <form onSubmit={handleLogin} className="login-form">
+          <input
+            type="email"
+            placeholder="E-Mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="login-input"
+          />
+          <input
+            type="password"
+            placeholder="Passwort"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="login-input"
+          />
+          <button type="submit" className="login-button">
+            Anmelden
+          </button>
+        </form>
+        {error && <p className="login-error">{error}</p>}{" "}
+        {/* Fehlermeldung anzeigen */}
+        <button
+          className="reset-password-button"
+          onClick={() => navigate("/request-password-reset")}
+        >
+          Passwort vergessen?
         </button>
-      </form>
-      {error && <p className="login-error">{error}</p>} {/* Fehlermeldung anzeigen */}
-      <button
-        className="reset-password-button"
-        onClick={() => navigate("/request-password-reset")}
-      >
-        Passwort vergessen?
-      </button>
+      </div>
     </div>
   );
 }

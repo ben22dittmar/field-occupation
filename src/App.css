@@ -1,3 +1,11 @@
+/* Allgemeines Styling für den Seiten-Container */
+.page-container {
+  max-width: 600px;
+  margin: 0 auto; /* Zentriert den Container horizontal */
+  padding: 20px; /* Fügt etwas Abstand zu den Rändern hinzu */
+  box-sizing: border-box; /* Bezieht Padding in die Breite mit ein */
+}
+
 /* Allgemeines Styling für die Startseite */
 .start-container {
     display: flex;

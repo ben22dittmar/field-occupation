@@ -38,40 +38,42 @@ export function SetPassword() {
   };
 
   return (
-    <div className="login-container">
-      <h1>Neues Passwort festlegen</h1>
-      {!isSuccess ? (
-        <form onSubmit={handleSetPassword} className="login-form">
-          <p>Bitte geben Sie Ihr neues Passwort ein.</p>
-          <input
-            type="password"
-            placeholder="Neues Passwort"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="login-input"
-          />
-          <input
-            type="password"
-            placeholder="Passwort bestätigen"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            className="login-input"
-          />
-          <button type="submit" className="login-button">
-            Passwort festlegen
-          </button>
-        </form>
-      ) : (
-        <div>
-          <p className="login-success">{message}</p>
-          <button className="login-button" onClick={() => navigate("/login")}>
-            Zur Anmeldung
-          </button>
-        </div>
-      )}
-      {error && <p className="login-error">{error}</p>} {/* Fehlermeldung */}
+    <div className="page-container">
+      <div className="login-container">
+        <h1>Neues Passwort festlegen</h1>
+        {!isSuccess ? (
+          <form onSubmit={handleSetPassword} className="login-form">
+            <p>Bitte geben Sie Ihr neues Passwort ein.</p>
+            <input
+              type="password"
+              placeholder="Neues Passwort"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="login-input"
+            />
+            <input
+              type="password"
+              placeholder="Passwort bestätigen"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="login-input"
+            />
+            <button type="submit" className="login-button">
+              Passwort festlegen
+            </button>
+          </form>
+        ) : (
+          <div>
+            <p className="login-success">{message}</p>
+            <button className="login-button" onClick={() => navigate("/login")}>
+              Zur Anmeldung
+            </button>
+          </div>
+        )}
+        {error && <p className="login-error">{error}</p>} {/* Fehlermeldung */}
+      </div>
     </div>
   );
 }
