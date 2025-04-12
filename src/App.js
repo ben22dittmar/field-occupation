@@ -2,57 +2,31 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useNavigate,
   Navigate
 } from "react-router-dom";
-import { motion } from "framer-motion";
 import "./App.css";
-import logoImage from "./assets/logo.png";
-import { Login } from "./Auth/Login";
-import { RequestReset } from "./Auth/RequestPasswordReset";
-import { ResetPassword } from "./Auth/ResetPassword";
-import { Dashboard } from "./Components/Dashboard";
-import { AuthProvider } from "./Auth/auth";
-import { AllReservations } from "./Components/AllReservations";
+import { Start } from "./Components/Start";
+import { Login } from "./Components/Login";
+import { RequestPasswordReset } from "./Components/RequestPasswordReset";
+import { SetPassword } from "./Components/SetPassword";
+import { Overview } from "./Components/Overview";
+import { NewReservation } from "./Components/NewReservation";
+import { ReservationDone } from "./Components/ReservationDone";
 
 export default function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/request-reset" element={<RequestReset />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/all-reservations" element={<AllReservations />} />
-          <Route path="*" element={<Navigate to="/home" replace />} />
-        </Routes>
-      </Router>
-    </AuthProvider>
-  );
-}
-
-function Home() {
-  const navigate = useNavigate();
-
-  return (
-    <div className="home-container">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="card"
-      >
-        <img src={logoImage} alt="Logo" className="logo" />
-        <h1 className="title">Willkommen beim TC Rot-Weiß</h1>
-        <button
-          className="button home-button"
-          onClick={() => navigate("/login")}
-        >
-          Anmelden
-        </button>
-      </motion.div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="start" />} />
+        <Route path="/start" element={<Start />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/request-password-reset" element={<RequestPasswordReset />} />
+        <Route path="/set-password" element={<SetPassword />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/new-reservation" element={<NewReservation />} />
+        <Route path="/reservation-done" element={<ReservationDone />} />
+        <Route path="*" element={<Navigate to="/start" />} />
+      </Routes>
+    </Router>
   );
 }
