@@ -101,10 +101,10 @@ export function Overview() {
     <div className="page-container">
       <div className="overview-header">
         <h1>Reservierungen</h1>
-        <button className="overview-button" onClick={() => navigate("/new-reservation")}>
-          Neue Reservierung
-        </button>
       </div>
+      <button className="overview-button" onClick={() => navigate("/new-reservation")}>
+        Neue Reservierung
+      </button>
       {isUserAdmin && (
         <div className="admin-toggle">
           <label>

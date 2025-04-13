@@ -129,13 +129,13 @@
 
 /* Header der Overview-Seite */
 .overview-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Weniger Abstand zur Überschrift */
+  text-align: center;
 }
 
 .overview-button {
+  display: block;
+  margin: 0 auto 20px auto; /* Zentriert den Button und fügt Abstand nach unten hinzu */
   background-color: #007bff;
   color: #fff;
   border: none;
