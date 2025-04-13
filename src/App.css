@@ -126,3 +126,142 @@
   margin-top: 10px;
   font-size: 14px;
 }
+
+/* Header der Overview-Seite */
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.overview-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.overview-button:hover {
+  background-color: #0056b3;
+}
+
+/* Ladekringel */
+.loading-spinner {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Keine Reservierungen */
+.no-reservations {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Liste der Reservierungen */
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Kachel für Reservierungen */
+.reservation-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.reservation-info p {
+  margin: 5px 0;
+}
+
+.delete-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #e64a19;
+}
+
+/* Abmelde-Button */
+.logout-button {
+  margin-top: 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.admin-toggle {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-toggle label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-toggle input[type="checkbox"] {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-toggle input[type="checkbox"]:checked {
+  background-color: #007bff;
+}
+
+.admin-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.admin-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
