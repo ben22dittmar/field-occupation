@@ -90,11 +90,9 @@ export function Overview() {
   };
 
   const formatTime = (time) => {
-    return new Date(`1970-01-01T${time}Z`).toLocaleTimeString("de-DE", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    }); // Format: hh:mm
+    // Zeit direkt ohne Zeitzonenverschiebung anzeigen
+    const [hours, minutes] = time.split(":");
+    return `${hours}:${minutes}`; // Format: hh:mm
   };
 
   return (

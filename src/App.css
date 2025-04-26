@@ -265,3 +265,158 @@
 .admin-toggle input[type="checkbox"]:checked::before {
   transform: translateX(20px);
 }
+
+/* Styling für die Seite "Neue Reservierung" */
+.new-reservation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.new-reservation-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.new-reservation-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.new-reservation-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.new-reservation-form label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.new-reservation-form input,
+.new-reservation-form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.new-reservation-form select option {
+  font-size: 14px;
+}
+
+.new-reservation-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.new-reservation-button:hover {
+  background-color: #0056b3;
+}
+
+.new-reservation-button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.new-reservation-dropdown {
+  margin-top: 20px;
+  margin-bottom: 20px; /* Fügt Abstand nach unten hinzu */
+}
+
+.new-reservation-dropdown select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.new-reservation-dropdown select:disabled {
+  background-color: #f9f9f9; /* Heller Hintergrund für deaktiviertes Dropdown */
+  color: #ccc; /* Grauer Text für deaktiviertes Dropdown */
+  cursor: not-allowed;
+}
+
+.new-reservation-dropdown select option {
+  font-size: 14px;
+}
+
+.new-reservation-error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.new-reservation-success {
+  color: green;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Einheitliche Breite für Eingabefelder, Dropdowns und Buttons */
+.new-reservation-form input,
+.new-reservation-form select,
+.new-reservation-button,
+.new-reservation-dropdown,
+.new-reservation-dropdown select,
+.new-reservation-dropdown select:disabled,
+.cancel-button {
+  width: 100%; /* Gleiche Breite wie die anderen Elemente */
+  max-width: 300px; /* Maximale Breite für größere Bildschirme */
+  box-sizing: border-box; /* Padding wird in die Breite einbezogen */
+}
+
+/* Einheitliche Höhe für Eingabefelder, Dropdowns und Buttons */
+.new-reservation-form input,
+.new-reservation-form select,
+.new-reservation-button,
+.new-reservation-dropdown select,
+.cancel-button{
+  height: 40px; /* Einheitliche Höhe für alle Elemente */
+  padding: 10px; /* Beibehaltung des Paddings */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Padding wird in die Breite einbezogen */
+}
+
+.cancel-button {
+  background-color: #dc3545; /* Rot für Abbrechen */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Abstand nach oben */
+}
+
+.cancel-button:hover {
+  background-color: #c82333; /* Dunkleres Rot beim Hover */
+}

@@ -11,7 +11,6 @@ import { RequestPasswordReset } from "./Components/RequestPasswordReset";
 import { SetPassword } from "./Components/SetPassword";
 import { Overview } from "./Components/Overview";
 import { NewReservation } from "./Components/NewReservation";
-import { ReservationDone } from "./Components/ReservationDone";
 
 export default function App() {
   return (
@@ -24,7 +23,6 @@ export default function App() {
         <Route path="/set-password" element={<SetPassword />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/new-reservation" element={<NewReservation />} />
-        <Route path="/reservation-done" element={<ReservationDone />} />
         <Route path="*" element={<Navigate to="/start" />} />
       </Routes>
     </Router>
